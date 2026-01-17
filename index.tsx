@@ -1,13 +1,8 @@
-er(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-}import React from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
-// More robust environment check for Vite build process
+// Safe environment check for Vite build process
 const isProd = typeof import.meta !== 'undefined' && import.meta.env?.PROD;
 
 if ('serviceWorker' in navigator && isProd) {
@@ -19,4 +14,9 @@ if ('serviceWorker' in navigator && isProd) {
 const container = document.getElementById('root');
 if (container) {
   const root = createRoot(container);
-  root.rend
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
