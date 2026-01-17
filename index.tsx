@@ -2,7 +2,10 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
-if ('serviceWorker' in navigator && import.meta.env.PROD) {
+// Safe environment check for Vite
+const isProd = import.meta.env?.PROD ?? false;
+
+if ('serviceWorker' in navigator && isProd) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW failed:', err));
   });
