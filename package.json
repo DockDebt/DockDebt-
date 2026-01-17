@@ -1,4 +1,4 @@
-  {
+ {
   "name": "dock-debt",
   "private": true,
   "version": "1.0.0",
@@ -12,7 +12,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "lucide-react": "^0.460.0",
-    "@google/genai": "^0.2.1"
+    "@google/genai": "^1.37.0"
   },
   "devDependencies": {
     "vite": "^6.0.0",
