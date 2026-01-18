@@ -2,15 +2,6 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
-// Safe environment check for Vite build process
-const isProd = typeof import.meta !== 'undefined' && import.meta.env?.PROD;
-
-if ('serviceWorker' in navigator && isProd) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(err => console.error('SW registration failed:', err));
-  });
-}
-
 const container = document.getElementById('root');
 if (container) {
   const root = createRoot(container);
@@ -19,4 +10,11 @@ if (container) {
       <App />
     </React.StrictMode>
   );
+}
+
+// Service worker logic - safe for both dev and prod
+if ('serviceWorker' in navigator && (import.meta as any).env?.PROD) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => console.error('SW failed:', err));
+  });
 }
