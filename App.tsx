@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, DetentionRecord, UserSettings } from './types';
-import { NAV_ITEMS, APP_NAME } from './constants';
-import { getSettings, getActiveSession, getRecords, saveRecord, setActiveSession } from './utils/storage';
-import Tracker from './components/Tracker';
-import Logbook from './components/Logbook';
-import Negotiator from './components/Negotiator';
-import CameraTool from './components/CameraTool';
-import SettingsView from './components/SettingsView';
-import FleetFeed from './components/FleetFeed';
-import VoiceCoPilot from './components/VoiceCoPilot';
-import PortalPreview from './components/PortalPreview';
-import LandingPage from './components/LandingPage';
-import DeploymentHub from './components/DeploymentHub';
-import { Globe, WifiOff, Zap, ExternalLink, ShieldAlert, Activity } from 'lucide-react';
+import { View, DetentionRecord, UserSettings } from './types.ts';
+import { NAV_ITEMS, APP_NAME } from './constants.tsx';
+import { getSettings, getActiveSession, getRecords, saveRecord, setActiveSession } from './utils/storage.ts';
+import Tracker from './components/Tracker.tsx';
+import Logbook from './components/Logbook.tsx';
+import Negotiator from './components/Negotiator.tsx';
+import CameraTool from './components/CameraTool.tsx';
+import SettingsView from './components/SettingsView.tsx';
+import FleetFeed from './components/FleetFeed.tsx';
+import VoiceCoPilot from './components/VoiceCoPilot.tsx';
+import PortalPreview from './components/PortalPreview.tsx';
+import LandingPage from './components/LandingPage.tsx';
+import DeploymentHub from './components/DeploymentHub.tsx';
+import { Globe, Zap, ShieldAlert, Activity } from 'lucide-react';
 
 const App: React.FC = () => {
   const hasSeenLanding = localStorage.getItem('dockdebt_visited');
